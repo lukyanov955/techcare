@@ -26,23 +26,45 @@
         p {
             font-size: 1.2em;
         }
+        .time {
+            font-weight: bold;
+            color: #333;
+        }
     </style>
+    <script>
+        // Функция для обновления времени в реальном времени
+        function updateTime() {
+            const timeElement = document.getElementById('currentTime');
+            const now = new Date();
+            const options = {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric'
+            };
+            const formattedTime = now.toLocaleDateString('ru-RU', options);
+            timeElement.textContent = formattedTime;
+        }
+
+        // Обновляем время каждую секунду
+        setInterval(updateTime, 1000);
+
+        // Обновляем время при загрузке страницы
+        window.onload = updateTime;
+    </script>
 </head>
 <body>
     <div class="container">
         <?php
-            // Получаем текущее время
-            $currentDateTime = date('d M Y H:i:s');
-
             // Получаем имя пользователя из параметров URL, если оно передано
             $userName = isset($_GET['name']) ? htmlspecialchars($_GET['name']) : 'Гость';
 
             // Приветствие пользователя
             echo "<h1>Добро пожаловать, $userName!</h1>";
-
-            // Отображение текущей даты и времени
-            echo "<p>Текущее время: $currentDateTime</p>";
         ?>
+        <p>Текущее время: <span id="currentTime" class="time"></span></p>
     </div>
 </body>
 </html>
