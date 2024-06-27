@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Страница приветствия</title>
+    <title>2,0,Страница приветствия</title>
     <style>
         body {
             font-family: Arial, sans-serif;
