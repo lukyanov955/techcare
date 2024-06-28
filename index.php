@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3.1 Страница приветствия</title>
+    <title>3.2 Страница приветствия</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -49,7 +49,7 @@
         }
 
         // Обновляем время каждую секунду
-        setInterval(updateTime, 1000);
+        setInterval(updateTime, 500);
 
         // Обновляем время при загрузке страницы
         window.onload = updateTime;
@@ -59,12 +59,12 @@
     <div class="container">
         <?php
             // Получаем имя пользователя из параметров URL, если оно передано
-            $userName = isset($_GET['name']) ? htmlspecialchars($_GET['name']) : 'Гость';
+            $userName = isset($_GET['name']) ? htmlspecialchars($_GET['name']) : 'непонятный чел';
 
             // Приветствие пользователя
             echo "<h1>Добро пожаловать, $userName!</h1>";
         ?>
-        <p>Текущее время: <span id="currentTime" class="time"></span></p>
+        <p>Текущее время : <span id="currentTime" class="time"></span></p>
     </div>
 </body>
 </html>
